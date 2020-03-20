@@ -1,0 +1,24 @@
+.create-btn {
+  padding: 10px;
+  margin: 30px;
+}
+
+.form-post {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.create-head {
+  font-size: 26px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-style: oblique;
+  color: rgb(80, 80, 136);
+  text-align: center;
+}
+
+.label-color {
+  color: rgb(80, 80, 136);
+  font-style: normal;
+  font-size: 16px;
+  font-family: sans-serif;
+}

@@ -1,0 +1,33 @@
+<%- include('../includes/base.ejs') %>
+<link rel="stylesheet" href="/css/auth.css" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+    
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Login" />
+        </div>
+    
+        <!-- Login Form -->
+        <form action="/login" method="POST">
+          <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+    
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    
+      </div>
+    </div>
+
+<%- include('../includes/end.ejs') %>
