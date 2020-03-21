@@ -8,8 +8,7 @@ const csrf = require("csurf");
 
 const User = require("./models/user");
 
-const MONGODB_URI =
-  "mongodb+srv://paudyal:TVhJdPkNRdFq1jio@cluster0-q3o0u.mongodb.net/blog?retryWrites=true&w=majority";
+const MONGODB_URI = "mongodb+srv://username:password";
 
 const app = express();
 const store = new MongoDbStore({
@@ -24,6 +23,7 @@ app.set("views", "views");
 
 const blogRoutes = require("./routes/blog");
 const authRoutes = require("./routes/auth");
+const profileRoutes = require("./routes/profile");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -59,6 +59,7 @@ app.use((req, res, next) => {
 
 app.use(blogRoutes);
 app.use(authRoutes);
+app.use(profileRoutes);
 
 mongoose
   .connect(MONGODB_URI)

@@ -6,9 +6,13 @@
     <a class="p-2 text-dark <%= path === '/' ? 'active' : '' %>" href="/"
       >Home</a
     >
-    <a class="p-2 text-dark" href="#">Post</a>
-    <a class="p-2 text-dark" href="#">About</a>
-    <% if (!isAuthenticated) { %>
+    <% if (isAuthenticated) { %>
+    <a
+      class="p-2 text-dark <%= path === '/post' ? 'active' : '' %>"
+      href="/post"
+      >Post</a
+    >
+    <%} else {%>
     <a
       class="btn btn-outline-primary  <%= path === '/login' ? 'active' : '' %>"
       href="/login"
@@ -23,6 +27,12 @@
     >Sign up</a
   >
   <% } else { %>
+  <div>
+    <a href="/create"
+      ><button class="btn btn-outline-primary">Create</button></a
+    >
+  </div>
+  &nbsp; &nbsp;
   <form action="/logout" method="post">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
     <button class="btn btn-outline-primary" type="submit">Logout</button>

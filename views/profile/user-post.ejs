@@ -1,0 +1,27 @@
+<%- include('../includes/base.ejs') %>
+<link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="post-create">
+        <% if (blogs.length > 0) { %>
+            <div class="row mb-2">
+                <% for (let post of blogs) { %>
+                <div class="col-md-6">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary"><%= username %></strong>
+                        <h3 class="mb-0"><%= post.title %></h3>
+                        <div class="mb-1 text-muted"><%= post.date.toDateString() %></div>
+                        <a href="/post/<%= post._id %>" class="stretched-link">Continue reading</a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+    </main>
+
+<%- include('../includes/end.ejs') %>

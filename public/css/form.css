@@ -22,3 +22,15 @@
   font-size: 16px;
   font-family: sans-serif;
 }
+
+.post-create {
+  padding: 10px;
+  margin: 30px;
+  margin-top: -10px;
+}
+
+.post-details {
+  padding: 300px;
+  margin: 30px;
+  margin-top: -10px;
+}

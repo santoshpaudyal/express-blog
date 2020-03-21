@@ -4,12 +4,6 @@
 
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <% if (isAuthenticated) { %>
-    <div class="create-btn">
-        <a href="/create"><button class="btn btn-outline-primary">Create</button></a>
-    </div>
-    <% } %>
-    
     <main>
         <% if (blogs.length > 0) { %>
             <div class="grid">
